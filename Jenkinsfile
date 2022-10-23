@@ -2,14 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Docker check ver') {
+        stage('Check versions') {
             steps {
                 sh "docker -v"
+                sh "git version"
             }
         }
-        stage('Git check ver') {
+        stage('Run Unit tests') {
             steps {
-                sh "git version"
+                sh "echo Running tests"
             }
         }
     }
