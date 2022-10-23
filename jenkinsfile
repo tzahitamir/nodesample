@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Docker check ver') {
             steps {
-                sh "docker -v"
+                sh "docker -v "
             }
         }
         stage('Git check ver') {
