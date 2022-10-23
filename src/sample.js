@@ -1,6 +1,6 @@
 var express = require('express')
  
-// create express application instance
+/// create express application instance
 var app = express()
   
 // express route
