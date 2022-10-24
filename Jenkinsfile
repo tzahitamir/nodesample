@@ -13,5 +13,11 @@ pipeline {
                 sh "echo Running tests"
             }
         }
+        stage('Docker build and push'){
+           steps{
+            sh 'docker build -t tzahitamir/nodeapp:""$GIT_COMMIT"" .'
+            sh 'docker push -t tzahitamir/nodeapp:""$GIT_COMMIT""'
+           } 
+        }
     }
 }
