@@ -18,7 +18,7 @@ pipeline {
             withDockerRegistry([credentialsId: "7ff5b5a3-2491-4006-8733-a1426dd37e69", url: ""]) {
                 // sh 'printenv' print all GIT enviorment varibles 
                 sh 'docker build -t tzahitamir/nodeapp:""$GIT_COMMIT"" .'
-                sh 'docker push -t tzahitamir/nodeapp:""$GIT_COMMIT""'
+                sh 'docker push tzahitamir/nodeapp:""$GIT_COMMIT""'
             }
            } 
         }
