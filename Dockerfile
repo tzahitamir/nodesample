@@ -7,5 +7,5 @@ RUN npm install express
 COPY src/sample.js /home/ubuntu/
 EXPOSE 8000 
 CMD node /home/ubuntu/sample.js
-#docker run -d -p 8000:8000 nodeapp FF 
+#docker run -d -p 8000:8000 nodeapp AA 
 #CMD sleep 1000
