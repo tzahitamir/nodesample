@@ -10,10 +10,12 @@ pipeline {
             }
         }
         stage ('Check K8s'){
+              steps {  
             withKubeConfig([credentialsId: 'kube-config']) {
                     sh "kubectl version --short"
                     sh "kubectl get nodes -o wide"
                 }
+              }
         }
         stage('Run Unit tests') {
             steps {
