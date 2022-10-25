@@ -30,5 +30,14 @@ pipeline {
             }
            } 
         }
+        stage ('k8s deploy - DEV')
+        {
+            steps{
+                withKubeConfig([credentialsId: 'kubeconfig']) {
+                   sh "sed -i 's#replace#tzahitamir/nodeapp:${GIT_COMMIT}#g' deploy.yaml"
+                   sh "kubectl apply -f deploy.yaml" 
+                }
+            }
+        }
     }
 }
