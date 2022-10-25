@@ -6,12 +6,16 @@ pipeline {
             steps {
                 sh "docker -v"
                 sh "git version"
-                withKubeConfig([credentialsId: 'kube-config']) {
+                w
+            }
+        }
+        stage ('Check K8s'){
+            withKubeConfig([credentialsId: 'kube-config']) {
                     sh "kubectl version --short"
                     sh "kubectl get nodes -o wide"
                 }
-            }
         }
+
         stage('Run Unit tests') {
             steps {
                 sh "echo Running tests"
