@@ -15,7 +15,6 @@ pipeline {
                     sh "kubectl get nodes -o wide"
                 }
         }
-
         stage('Run Unit tests') {
             steps {
                 sh "echo Running tests"
