@@ -6,7 +6,6 @@ pipeline {
             steps {
                 sh "docker -v"
                 sh "git version"
-                w
             }
         }
         stage ('Check K8s'){
