@@ -32,4 +32,4 @@ spec:
     targetPort: 8000
   selector:
     app: devsecops
-  type: NodePort
+  type: ClusterIP
