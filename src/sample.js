@@ -1,13 +1,13 @@
-var express = require('express')
- 
-// create express application instance
-var app = express()
-  
-// express route
-app.get('/', function (req, res) {
-   res.send('This is a basic Example for Express.js by TUTORIALKART')
-})
-  
-// start server
-var server = app.listen(8000)
-// Integration test 999
+const http = require('http');
+const os = require('os');
+
+#console.log("bogo server starting and listening on 8080...");
+
+var handler = function(request, response) {
+#  console.log("Received request from " + request.connection.remoteAddress);
+  response.writeHead(200);
+  response.end("You've hit " + os.hostname() + "\n");
+};
+
+var www = http.createServer(handler);
+www.listen(8000);

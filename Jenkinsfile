@@ -36,6 +36,8 @@ pipeline {
                 withKubeConfig([credentialsId: 'kubeconfig']) {
                    sh "sed -i 's#replace#tzahitamir/nodeapp:${GIT_COMMIT}#g' deploy.yaml"
                    sh "kubectl apply -f deploy.yaml" 
+                   //https://kodekloud.com/topic/demo-kubernetes-deployment-rollout/ 
+                   //sample of implemtation including rollout status, and rollback
                 }
             }
         }
